@@ -1,0 +1,30 @@
+{
+    "name": "Rate",
+    "fields": [
+        {
+            "fieldName": "raiting",
+            "fieldType": "Ratestars",
+            "fieldValues": "ONE_STAR,FIVE_STARS,THREE_STARS,TWO_STARS,FOUR_STARS"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "autopark",
+            "otherEntityRelationshipName": "rates",
+            "relationshipName": "autopark",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200601144700",
+    "entityTableName": "rate",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

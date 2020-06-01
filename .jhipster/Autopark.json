@@ -1,0 +1,76 @@
+{
+    "name": "Autopark",
+    "fields": [
+        {
+            "fieldName": "mark",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "model",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "prePrice",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "CarType",
+            "fieldValues": "Car,SUV,Luxary,Bus,Track,CarHome,FamilyCar"
+        },
+        {
+            "fieldName": "pledge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "statusAvaileble",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "rate",
+            "otherEntityRelationshipName": "autopark",
+            "relationshipName": "rates"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "fixcar",
+            "otherEntityRelationshipName": "autoparks",
+            "relationshipName": "fixcars",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200601144500",
+    "entityTableName": "autopark",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

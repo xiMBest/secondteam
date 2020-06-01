@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.secondteam.rentauto",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "rentauto",
+    "packageName": "com.secondteam.rentauto",
+    "packageFolder": "com/secondteam/rentauto",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YzQzYzAzODcwOGU3OTc1YWUyN2U1YmQ1ZDI4MzU5MjgxN2QxNzhhNDU0NjMxMjQ2YzRkZjQwMWI2ZDk3ODMwMmEyNWI3NzVkMzgwNjFlYmQzYWIxZWRiODZmZTc2YzY0Y2JhYWIyNzM4YjgwODZmZjMyZGVjM2EwNzVjMzk1Mjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "lux",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1591022217354,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "ua"],
+    "blueprints": []
+  }
+}

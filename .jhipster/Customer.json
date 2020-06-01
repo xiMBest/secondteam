@@ -1,0 +1,85 @@
+{
+    "name": "Customer",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "years",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^(\\+\\d{1,3}[- ]?)?\\d{10}$"
+        },
+        {
+            "fieldName": "adress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservecar",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "reservecars"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "penalty",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "penaltys"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "insuarence",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "insuarences"
+        }
+    ],
+    "changelogDate": "20200601144900",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

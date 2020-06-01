@@ -1,0 +1,42 @@
+{
+    "name": "Insuarence",
+    "fields": [
+        {
+            "fieldName": "dateApply",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateEnd",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "cost",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "InsuarenceType",
+            "fieldValues": "Gold,Silver,Platinum"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "insuarences",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200601144800",
+    "entityTableName": "insuarence",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
