@@ -1,0 +1,30 @@
+{
+  "rentautoApp": {
+    "autopark": {
+      "home": {
+        "title": "Autoparks",
+        "createLabel": "Create a new Autopark",
+        "createOrEditLabel": "Create or edit a Autopark",
+        "notFound": "No Autoparks found"
+      },
+      "created": "A new Autopark is created with identifier {{ param }}",
+      "updated": "A Autopark is updated with identifier {{ param }}",
+      "deleted": "A Autopark is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Autopark {{ id }}?"
+      },
+      "detail": {
+        "title": "Autopark"
+      },
+      "mark": "Mark",
+      "model": "Model",
+      "prePrice": "Pre Price",
+      "color": "Color",
+      "type": "Type",
+      "pledge": "Pledge",
+      "statusAvaileble": "Status Availeble",
+      "rates": "Rates",
+      "fixcars": "Fixcars"
+    }
+  }
+}

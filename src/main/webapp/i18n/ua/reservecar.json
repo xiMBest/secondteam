@@ -1,0 +1,28 @@
+{
+  "rentautoApp": {
+    "reservecar": {
+      "home": {
+        "title": "Reservecars",
+        "createLabel": "Створити новий Reservecar",
+        "createOrEditLabel": "Створити чи редагувати Reservecar",
+        "notFound": "No Reservecars found"
+      },
+      "created": "Новий Reservecar створений з ідентифікатором {{ param }}",
+      "updated": "Reservecar оновлений з ідентифікатором {{ param }}",
+      "deleted": "Reservecar видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Reservecar {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservecar"
+      },
+      "name": "Name",
+      "type": "Type",
+      "totalPrice": "Total Price",
+      "datePickUP": "Date Pick UP",
+      "dateDropDown": "Date Drop Down",
+      "description": "Description",
+      "customer": "Customer"
+    }
+  }
+}

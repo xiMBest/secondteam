@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fixcar">
+            <h2><span jhiTranslate="rentautoApp.fixcar.detail.title">Fixcar</span> {{ fixcar.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rentautoApp.fixcar.price">Price</span></dt>
+                <dd>
+                    <span>{{ fixcar.price }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.fixcar.dateFixing">Date Fixing</span></dt>
+                <dd>
+                    <span>{{ fixcar.dateFixing }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.fixcar.description">Description</span></dt>
+                <dd>
+                    <span>{{ fixcar.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.fixcar.autoparks">Autoparks</span></dt>
+                <dd>
+                    <span *ngFor="let autoparks of fixcar.autoparks; let last = last">
+                        <a [routerLink]="['/autopark', autoparks?.id, 'view']">{{ autoparks.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fixcar', fixcar.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

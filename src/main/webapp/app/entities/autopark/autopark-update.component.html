@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-autopark-heading" jhiTranslate="rentautoApp.autopark.home.createOrEditLabel">Create or edit a Autopark</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.mark" for="field_mark">Mark</label>
+                    <input type="text" class="form-control" name="mark" id="field_mark"
+                           formControlName="mark"/>
+                    <div *ngIf="editForm.get('mark')!.invalid && (editForm.get('mark')!.dirty || editForm.get('mark')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mark')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mark')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.model" for="field_model">Model</label>
+                    <input type="text" class="form-control" name="model" id="field_model"
+                           formControlName="model"/>
+                    <div *ngIf="editForm.get('model')!.invalid && (editForm.get('model')!.dirty || editForm.get('model')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('model')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('model')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.prePrice" for="field_prePrice">Pre Price</label>
+                    <input type="number" class="form-control" name="prePrice" id="field_prePrice"
+                           formControlName="prePrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.color" for="field_color">Color</label>
+                    <input type="text" class="form-control" name="color" id="field_color"
+                           formControlName="color"/>
+                    <div *ngIf="editForm.get('color')!.invalid && (editForm.get('color')!.dirty || editForm.get('color')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('color')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('color')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="Car">{{ 'rentautoApp.CarType.Car' | translate }}</option>
+                        <option value="SUV">{{ 'rentautoApp.CarType.SUV' | translate }}</option>
+                        <option value="Luxary">{{ 'rentautoApp.CarType.Luxary' | translate }}</option>
+                        <option value="Bus">{{ 'rentautoApp.CarType.Bus' | translate }}</option>
+                        <option value="Track">{{ 'rentautoApp.CarType.Track' | translate }}</option>
+                        <option value="CarHome">{{ 'rentautoApp.CarType.CarHome' | translate }}</option>
+                        <option value="FamilyCar">{{ 'rentautoApp.CarType.FamilyCar' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.pledge" for="field_pledge">Pledge</label>
+                    <input type="number" class="form-control" name="pledge" id="field_pledge"
+                           formControlName="pledge"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.autopark.statusAvaileble" for="field_statusAvaileble">Status Availeble</label>
+                    <input type="checkbox" class="form-control" name="statusAvaileble" id="field_statusAvaileble"
+                           formControlName="statusAvaileble"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

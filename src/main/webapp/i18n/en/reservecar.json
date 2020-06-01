@@ -1,0 +1,28 @@
+{
+  "rentautoApp": {
+    "reservecar": {
+      "home": {
+        "title": "Reservecars",
+        "createLabel": "Create a new Reservecar",
+        "createOrEditLabel": "Create or edit a Reservecar",
+        "notFound": "No Reservecars found"
+      },
+      "created": "A new Reservecar is created with identifier {{ param }}",
+      "updated": "A Reservecar is updated with identifier {{ param }}",
+      "deleted": "A Reservecar is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reservecar {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservecar"
+      },
+      "name": "Name",
+      "type": "Type",
+      "totalPrice": "Total Price",
+      "datePickUP": "Date Pick UP",
+      "dateDropDown": "Date Drop Down",
+      "description": "Description",
+      "customer": "Customer"
+    }
+  }
+}

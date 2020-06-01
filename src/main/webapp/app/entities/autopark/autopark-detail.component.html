@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="autopark">
+            <h2><span jhiTranslate="rentautoApp.autopark.detail.title">Autopark</span> {{ autopark.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rentautoApp.autopark.mark">Mark</span></dt>
+                <dd>
+                    <span>{{ autopark.mark }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.model">Model</span></dt>
+                <dd>
+                    <span>{{ autopark.model }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.prePrice">Pre Price</span></dt>
+                <dd>
+                    <span>{{ autopark.prePrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.color">Color</span></dt>
+                <dd>
+                    <span>{{ autopark.color }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'rentautoApp.CarType.' + autopark.type }}">{{ autopark.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.pledge">Pledge</span></dt>
+                <dd>
+                    <span>{{ autopark.pledge }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.autopark.statusAvaileble">Status Availeble</span></dt>
+                <dd>
+                    <span>{{ autopark.statusAvaileble }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/autopark', autopark.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

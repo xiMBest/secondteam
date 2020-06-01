@@ -1,0 +1,26 @@
+{
+  "rentautoApp": {
+    "insuarence": {
+      "home": {
+        "title": "Insuarences",
+        "createLabel": "Create a new Insuarence",
+        "createOrEditLabel": "Create or edit a Insuarence",
+        "notFound": "No Insuarences found"
+      },
+      "created": "A new Insuarence is created with identifier {{ param }}",
+      "updated": "A Insuarence is updated with identifier {{ param }}",
+      "deleted": "A Insuarence is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Insuarence {{ id }}?"
+      },
+      "detail": {
+        "title": "Insuarence"
+      },
+      "dateApply": "Date Apply",
+      "dateEnd": "Date End",
+      "cost": "Cost",
+      "type": "Type",
+      "customer": "Customer"
+    }
+  }
+}

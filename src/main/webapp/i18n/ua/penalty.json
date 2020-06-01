@@ -1,0 +1,25 @@
+{
+  "rentautoApp": {
+    "penalty": {
+      "home": {
+        "title": "Penalties",
+        "createLabel": "Створити новий Penalty",
+        "createOrEditLabel": "Створити чи редагувати Penalty",
+        "notFound": "No Penalties found"
+      },
+      "created": "Новий Penalty створений з ідентифікатором {{ param }}",
+      "updated": "Penalty оновлений з ідентифікатором {{ param }}",
+      "deleted": "Penalty видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Penalty {{ id }}?"
+      },
+      "detail": {
+        "title": "Penalty"
+      },
+      "datePenalty": "Date Penalty",
+      "price": "Price",
+      "description": "Description",
+      "customer": "Customer"
+    }
+  }
+}

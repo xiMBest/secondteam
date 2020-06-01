@@ -1,0 +1,7 @@
+export const enum Ratestars {
+  ONE_STAR = 'ONE_STAR',
+  FIVE_STARS = 'FIVE_STARS',
+  THREE_STARS = 'THREE_STARS',
+  TWO_STARS = 'TWO_STARS',
+  FOUR_STARS = 'FOUR_STARS'
+}

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reservecar">
+            <h2><span jhiTranslate="rentautoApp.reservecar.detail.title">Reservecar</span> {{ reservecar.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rentautoApp.reservecar.name">Name</span></dt>
+                <dd>
+                    <span>{{ reservecar.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'rentautoApp.CarType.' + reservecar.type }}">{{ reservecar.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.totalPrice">Total Price</span></dt>
+                <dd>
+                    <span>{{ reservecar.totalPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.datePickUP">Date Pick UP</span></dt>
+                <dd>
+                    <span>{{ reservecar.datePickUP }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.dateDropDown">Date Drop Down</span></dt>
+                <dd>
+                    <span>{{ reservecar.dateDropDown }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.description">Description</span></dt>
+                <dd>
+                    <span>{{ reservecar.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.reservecar.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="reservecar.customer">
+                        <a [routerLink]="['/customer', reservecar.customer?.id, 'view']">{{ reservecar.customer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reservecar', reservecar.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

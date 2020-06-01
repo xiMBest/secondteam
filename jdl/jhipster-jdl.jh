@@ -1,0 +1,84 @@
+entity Autopark {
+	id Long
+    mark String required maxlength(100)
+    model String required maxlength(100)
+    prePrice Integer
+    color String required maxlength(20)
+    type CarType
+    pledge Integer
+    statusAvaileble Boolean
+}
+
+entity Fixcar{
+	id Long
+    price Integer
+    dateFixing ZonedDateTime
+    description String
+}
+
+entity Rate{
+	raiting Ratestars
+}
+
+entity Insuarence{
+	id Long
+    dateApply ZonedDateTime
+    dateEnd ZonedDateTime
+    cost Integer
+    type InsuarenceType
+}
+
+
+entity Customer {
+	id Long
+    name String required maxlength(100)
+    surname String required maxlength(100)
+    years Integer
+    email String required maxlength(100)
+    phone String unique pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)
+    adress String required maxlength(100)
+}
+
+entity Penalty {
+	id Long
+    datePenalty ZonedDateTime
+    price Integer
+    description String
+}
+
+entity Reservecar {
+	id Long
+    name String
+    type CarType
+    totalPrice Integer
+    datePickUP ZonedDateTime
+    dateDropDown ZonedDateTime
+    description String
+}
+
+enum Ratestars{
+	ONE_STAR, FIVE_STARS, THREE_STARS, TWO_STARS, FOUR_STARS
+}
+
+enum CarType {
+	Car, SUV, Luxary, Bus, Track, CarHome, FamilyCar
+}
+
+enum InsuarenceType{
+	Gold, Silver, Platinum
+}
+
+relationship ManyToMany{
+	Fixcar{autoparks} to Autopark{fixcars}
+}
+relationship OneToMany{
+	Customer{reservecars} to Reservecar{customer}
+    Customer{penaltys} to Penalty{customer}
+    Customer{insuarences} to Insuarence{customer}
+    Autopark{rates} to Rate{autopark}
+}
+
+
+filter all 
+paginate all with infinite-scroll
+service all with serviceImpl

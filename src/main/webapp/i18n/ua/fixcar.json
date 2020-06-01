@@ -1,0 +1,25 @@
+{
+  "rentautoApp": {
+    "fixcar": {
+      "home": {
+        "title": "Fixcars",
+        "createLabel": "Створити новий Fixcar",
+        "createOrEditLabel": "Створити чи редагувати Fixcar",
+        "notFound": "No Fixcars found"
+      },
+      "created": "Новий Fixcar створений з ідентифікатором {{ param }}",
+      "updated": "Fixcar оновлений з ідентифікатором {{ param }}",
+      "deleted": "Fixcar видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Fixcar {{ id }}?"
+      },
+      "detail": {
+        "title": "Fixcar"
+      },
+      "price": "Price",
+      "dateFixing": "Date Fixing",
+      "description": "Description",
+      "autoparks": "Autoparks"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "rentautoApp": {
+    "fixcar": {
+      "home": {
+        "title": "Fixcars",
+        "createLabel": "Create a new Fixcar",
+        "createOrEditLabel": "Create or edit a Fixcar",
+        "notFound": "No Fixcars found"
+      },
+      "created": "A new Fixcar is created with identifier {{ param }}",
+      "updated": "A Fixcar is updated with identifier {{ param }}",
+      "deleted": "A Fixcar is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fixcar {{ id }}?"
+      },
+      "detail": {
+        "title": "Fixcar"
+      },
+      "price": "Price",
+      "dateFixing": "Date Fixing",
+      "description": "Description",
+      "autoparks": "Autoparks"
+    }
+  }
+}

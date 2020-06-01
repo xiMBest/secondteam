@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rate">
+            <h2><span jhiTranslate="rentautoApp.rate.detail.title">Rate</span> {{ rate.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rentautoApp.rate.raiting">Raiting</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'rentautoApp.Ratestars.' + rate.raiting }}">{{ rate.raiting }}</span>
+                </dd>
+                <dt><span jhiTranslate="rentautoApp.rate.autopark">Autopark</span></dt>
+                <dd>
+                    <div *ngIf="rate.autopark">
+                        <a [routerLink]="['/autopark', rate.autopark?.id, 'view']">{{ rate.autopark?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rate', rate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

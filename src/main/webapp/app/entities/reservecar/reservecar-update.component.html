@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-reservecar-heading" jhiTranslate="rentautoApp.reservecar.home.createOrEditLabel">Create or edit a Reservecar</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="Car">{{ 'rentautoApp.CarType.Car' | translate }}</option>
+                        <option value="SUV">{{ 'rentautoApp.CarType.SUV' | translate }}</option>
+                        <option value="Luxary">{{ 'rentautoApp.CarType.Luxary' | translate }}</option>
+                        <option value="Bus">{{ 'rentautoApp.CarType.Bus' | translate }}</option>
+                        <option value="Track">{{ 'rentautoApp.CarType.Track' | translate }}</option>
+                        <option value="CarHome">{{ 'rentautoApp.CarType.CarHome' | translate }}</option>
+                        <option value="FamilyCar">{{ 'rentautoApp.CarType.FamilyCar' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.totalPrice" for="field_totalPrice">Total Price</label>
+                    <input type="number" class="form-control" name="totalPrice" id="field_totalPrice"
+                           formControlName="totalPrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.datePickUP" for="field_datePickUP">Date Pick UP</label>
+                    <div class="d-flex">
+                        <input id="field_datePickUP" type="datetime-local" class="form-control" name="datePickUP" formControlName="datePickUP" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.dateDropDown" for="field_dateDropDown">Date Drop Down</label>
+                    <div class="d-flex">
+                        <input id="field_dateDropDown" type="datetime-local" class="form-control" name="dateDropDown" formControlName="dateDropDown" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customer">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption" *ngFor="let customerOption of customers; trackBy: trackById">{{ customerOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

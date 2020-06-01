@@ -1,0 +1,14 @@
+{
+  "rentautoApp": {
+    "CarType": {
+      "null": "",
+      "Car": "Car",
+      "SUV": "SUV",
+      "Luxary": "Luxary",
+      "Bus": "Bus",
+      "Track": "Track",
+      "CarHome": "CarHome",
+      "FamilyCar": "FamilyCar"
+    }
+  }
+}

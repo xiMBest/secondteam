@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rentautoApp.reservecar.home.title">Reservecars</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-reservecar" [routerLink]="['/reservecar/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rentautoApp.reservecar.home.createLabel">
+            Create a new Reservecar
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="reservecars?.length === 0">
+        <span jhiTranslate="rentautoApp.reservecar.home.notFound">No reservecars found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="reservecars?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="rentautoApp.reservecar.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="type"><span jhiTranslate="rentautoApp.reservecar.type">Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="totalPrice"><span jhiTranslate="rentautoApp.reservecar.totalPrice">Total Price</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePickUP"><span jhiTranslate="rentautoApp.reservecar.datePickUP">Date Pick UP</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDropDown"><span jhiTranslate="rentautoApp.reservecar.dateDropDown">Date Drop Down</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span jhiTranslate="rentautoApp.reservecar.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="customer.id"><span jhiTranslate="rentautoApp.reservecar.customer">Customer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let reservecar of reservecars ;trackBy: trackId">
+                    <td><a [routerLink]="['/reservecar', reservecar.id, 'view']">{{ reservecar.id }}</a></td>
+                    <td>{{ reservecar.name }}</td>
+                    <td jhiTranslate="{{ 'rentautoApp.CarType.' + reservecar.type }}">{{ reservecar.type }}</td>
+                    <td>{{ reservecar.totalPrice }}</td>
+                    <td>{{ reservecar.datePickUP | date:'medium' }}</td>
+                    <td>{{ reservecar.dateDropDown | date:'medium' }}</td>
+                    <td>{{ reservecar.description }}</td>
+                    <td>
+                        <div *ngIf="reservecar.customer">
+                            <a [routerLink]="['/customer', reservecar.customer?.id, 'view']" >{{ reservecar.customer?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/reservecar', reservecar.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/reservecar', reservecar.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(reservecar)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

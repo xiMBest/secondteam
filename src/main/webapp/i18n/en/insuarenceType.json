@@ -1,0 +1,10 @@
+{
+  "rentautoApp": {
+    "InsuarenceType": {
+      "null": "",
+      "Gold": "Gold",
+      "Silver": "Silver",
+      "Platinum": "Platinum"
+    }
+  }
+}

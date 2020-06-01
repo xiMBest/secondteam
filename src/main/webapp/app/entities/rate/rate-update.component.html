@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-rate-heading" jhiTranslate="rentautoApp.rate.home.createOrEditLabel">Create or edit a Rate</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.rate.raiting" for="field_raiting">Raiting</label>
+                    <select class="form-control" name="raiting" formControlName="raiting" id="field_raiting">
+                        <option value="ONE_STAR">{{ 'rentautoApp.Ratestars.ONE_STAR' | translate }}</option>
+                        <option value="FIVE_STARS">{{ 'rentautoApp.Ratestars.FIVE_STARS' | translate }}</option>
+                        <option value="THREE_STARS">{{ 'rentautoApp.Ratestars.THREE_STARS' | translate }}</option>
+                        <option value="TWO_STARS">{{ 'rentautoApp.Ratestars.TWO_STARS' | translate }}</option>
+                        <option value="FOUR_STARS">{{ 'rentautoApp.Ratestars.FOUR_STARS' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rentautoApp.rate.autopark" for="field_autopark">Autopark</label>
+                    <select class="form-control" id="field_autopark" name="autopark" formControlName="autopark">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="autoparkOption.id === editForm.get('autopark')!.value?.id ? editForm.get('autopark')!.value : autoparkOption" *ngFor="let autoparkOption of autoparks; trackBy: trackById">{{ autoparkOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

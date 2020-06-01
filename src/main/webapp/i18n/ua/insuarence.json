@@ -1,0 +1,26 @@
+{
+  "rentautoApp": {
+    "insuarence": {
+      "home": {
+        "title": "Insuarences",
+        "createLabel": "Створити новий Insuarence",
+        "createOrEditLabel": "Створити чи редагувати Insuarence",
+        "notFound": "No Insuarences found"
+      },
+      "created": "Новий Insuarence створений з ідентифікатором {{ param }}",
+      "updated": "Insuarence оновлений з ідентифікатором {{ param }}",
+      "deleted": "Insuarence видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Insuarence {{ id }}?"
+      },
+      "detail": {
+        "title": "Insuarence"
+      },
+      "dateApply": "Date Apply",
+      "dateEnd": "Date End",
+      "cost": "Cost",
+      "type": "Type",
+      "customer": "Customer"
+    }
+  }
+}

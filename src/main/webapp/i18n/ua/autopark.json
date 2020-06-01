@@ -1,0 +1,30 @@
+{
+  "rentautoApp": {
+    "autopark": {
+      "home": {
+        "title": "Autoparks",
+        "createLabel": "Створити новий Autopark",
+        "createOrEditLabel": "Створити чи редагувати Autopark",
+        "notFound": "No Autoparks found"
+      },
+      "created": "Новий Autopark створений з ідентифікатором {{ param }}",
+      "updated": "Autopark оновлений з ідентифікатором {{ param }}",
+      "deleted": "Autopark видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Autopark {{ id }}?"
+      },
+      "detail": {
+        "title": "Autopark"
+      },
+      "mark": "Mark",
+      "model": "Model",
+      "prePrice": "Pre Price",
+      "color": "Color",
+      "type": "Type",
+      "pledge": "Pledge",
+      "statusAvaileble": "Status Availeble",
+      "rates": "Rates",
+      "fixcars": "Fixcars"
+    }
+  }
+}

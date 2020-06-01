@@ -1,0 +1,23 @@
+{
+  "rentautoApp": {
+    "rate": {
+      "home": {
+        "title": "Rates",
+        "createLabel": "Створити новий Rate",
+        "createOrEditLabel": "Створити чи редагувати Rate",
+        "notFound": "No Rates found"
+      },
+      "created": "Новий Rate створений з ідентифікатором {{ param }}",
+      "updated": "Rate оновлений з ідентифікатором {{ param }}",
+      "deleted": "Rate видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Rate {{ id }}?"
+      },
+      "detail": {
+        "title": "Rate"
+      },
+      "raiting": "Raiting",
+      "autopark": "Autopark"
+    }
+  }
+}
