@@ -91,7 +91,7 @@
       "id": "ID"
     },
     "ribbon": {
-      "dev": "Development"
+      "dev": "SecondTeam"
     },
     "item-count": "Showing {{first}} - {{second}} of {{total}} items."
   },
@@ -143,5 +143,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "This is your footer"
+  "footer": "secondteam"
 }
