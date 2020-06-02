@@ -1,5 +1,5 @@
 <div>
-    <h2 id="page-heading">
+    <h2 *jhiHasAnyAuthority="'ROLE_ADMIN'" id="page-heading">
         <span jhiTranslate="rentautoApp.autopark.home.title">Autoparks</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-autopark" [routerLink]="['/autopark/new']">
@@ -52,14 +52,14 @@
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                             </button>
 
-                            <button type="submit"
+                            <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit"
                                     [routerLink]="['/autopark', autopark.id, 'edit']"
                                     class="btn btn-primary btn-sm">
                                 <fa-icon icon="pencil-alt"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                             </button>
 
-                            <button type="submit" (click)="delete(autopark)"
+                            <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(autopark)"
                                     class="btn btn-danger btn-sm">
                                 <fa-icon icon="times"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>

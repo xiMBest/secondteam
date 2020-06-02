@@ -1,5 +1,5 @@
 <div>
-    <h2 id="page-heading">
+    <h2 *jhiHasAnyAuthority="'ROLE_ADMIN'" id="page-heading">
         <span jhiTranslate="rentautoApp.penalty.home.title">Penalties</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-penalty" [routerLink]="['/penalty/new']">
@@ -26,7 +26,7 @@
                     <th scope="col"  jhiSortBy="datePenalty"><span jhiTranslate="rentautoApp.penalty.datePenalty">Date Penalty</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="price"><span jhiTranslate="rentautoApp.penalty.price">Price</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="description"><span jhiTranslate="rentautoApp.penalty.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="customer.id"><span jhiTranslate="rentautoApp.penalty.customer">Customer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th *jhiHasAnyAuthority="'ROLE_ADMIN'" scope="col"  jhiSortBy="customer.id"><span jhiTranslate="rentautoApp.penalty.customer">Customer</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -50,14 +50,14 @@
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                             </button>
 
-                            <button type="submit"
+                            <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit"
                                     [routerLink]="['/penalty', penalty.id, 'edit']"
                                     class="btn btn-primary btn-sm">
                                 <fa-icon icon="pencil-alt"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                             </button>
 
-                            <button type="submit" (click)="delete(penalty)"
+                            <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(penalty)"
                                     class="btn btn-danger btn-sm">
                                 <fa-icon icon="times"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
