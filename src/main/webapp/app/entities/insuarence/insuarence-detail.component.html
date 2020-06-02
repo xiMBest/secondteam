@@ -24,10 +24,10 @@
                 <dd>
                     <span jhiTranslate="{{ 'rentautoApp.InsuarenceType.' + insuarence.type }}">{{ insuarence.type }}</span>
                 </dd>
-                <dt><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span></dt>
+                <dt ><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span></dt>
                 <dd>
                     <div *ngIf="insuarence.customer">
-                        <a [routerLink]="['/customer', insuarence.customer?.id, 'view']">{{ insuarence.customer?.id }}</a>
+                        <a [routerLink]="['/customer', insuarence.customer?.name, 'view']">{{ insuarence.customer.name }}</a>
                     </div>
                 </dd>
             </dl>
@@ -38,7 +38,7 @@
                 <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
 
-            <button type="button"
+            <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button"
                     [routerLink]="['/insuarence', insuarence.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
