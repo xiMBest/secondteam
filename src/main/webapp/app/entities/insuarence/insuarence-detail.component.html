@@ -24,7 +24,7 @@
                 <dd>
                     <span jhiTranslate="{{ 'rentautoApp.InsuarenceType.' + insuarence.type }}">{{ insuarence.type }}</span>
                 </dd>
-                <dt ><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span></dt>
+                <dt *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span></dt>
                 <dd>
                     <div *ngIf="insuarence.customer">
                         <a [routerLink]="['/customer', insuarence.customer?.name, 'view']">{{ insuarence.customer.name }}</a>

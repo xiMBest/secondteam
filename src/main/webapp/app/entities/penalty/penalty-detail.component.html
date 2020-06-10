@@ -8,8 +8,8 @@
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rentautoApp.penalty.datePenalty">Date Penalty</span></dt>
-                <dd>
+                <dt *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="rentautoApp.penalty.datePenalty">Date Penalty</span></dt>
+                <dd *jhiHasAnyAuthority="'ROLE_ADMIN'">
                     <span>{{ penalty.datePenalty }}</span>
                 </dd>
                 <dt><span jhiTranslate="rentautoApp.penalty.price">Price</span></dt>
