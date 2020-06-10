@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.name" for="field_name">Name</label>
+                    <label class="form-control-label" for="field_name">Full Name</label>
                     <input type="text" class="form-control" name="name" id="field_name"
                            formControlName="name"/>
                 </div>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.totalPrice" for="field_totalPrice">Total Price</label>
+                    <label class="form-control-label" for="field_totalPrice">Phone Number</label>
                     <input type="number" class="form-control" name="totalPrice" id="field_totalPrice"
                            formControlName="totalPrice"/>
                 </div>
@@ -54,14 +54,6 @@
                     <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.description" for="field_description">Description</label>
                     <input type="text" class="form-control" name="description" id="field_description"
                            formControlName="description"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rentautoApp.reservecar.customer" for="field_customer">Customer</label>
-                    <select class="form-control" id="field_customer" name="customer" formControlName="customer">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption" *ngFor="let customerOption of customers; trackBy: trackById">{{ customerOption.id }}</option>
-                    </select>
                 </div>
             </div>
 

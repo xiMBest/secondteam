@@ -2,10 +2,16 @@
     <h2 id="page-heading">
         <span jhiTranslate="rentautoApp.customer.home.title">Customers</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-customer" [routerLink]="['/customer/new']">
+        <button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-customer" [routerLink]="['/customer/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="rentautoApp.customer.home.createLabel">
             Create a new Customer
+            </span>
+        </button>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-customer" [routerLink]="['/customer/new']">
+            <fa-icon></fa-icon>
+            <span>
+            Registration
             </span>
         </button>
     </h2>
@@ -19,7 +25,7 @@
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="customers?.length > 0">
-        <table class="table table-striped" aria-describedby="page-heading">
+        <table *jhiHasAnyAuthority="'ROLE_ADMIN'" class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>

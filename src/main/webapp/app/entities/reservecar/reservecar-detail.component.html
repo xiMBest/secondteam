@@ -8,15 +8,15 @@
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rentautoApp.reservecar.name">Name</span></dt>
+                <dt><span>Full Name</span></dt>
                 <dd>
                     <span>{{ reservecar.name }}</span>
                 </dd>
                 <dt><span jhiTranslate="rentautoApp.reservecar.type">Type</span></dt>
                 <dd>
-                    <span jhiTranslate="{{ 'rentautoApp.CarType.' + reservecar.type }}">{{ reservecar.type }}</span>
+                    <span>{{ reservecar.type }}</span>
                 </dd>
-                <dt><span jhiTranslate="rentautoApp.reservecar.totalPrice">Total Price</span></dt>
+                <dt><span>Phone Number</span></dt>
                 <dd>
                     <span>{{ reservecar.totalPrice }}</span>
                 </dd>
@@ -31,12 +31,6 @@
                 <dt><span jhiTranslate="rentautoApp.reservecar.description">Description</span></dt>
                 <dd>
                     <span>{{ reservecar.description }}</span>
-                </dd>
-                <dt><span jhiTranslate="rentautoApp.reservecar.customer">Customer</span></dt>
-                <dd>
-                    <div *ngIf="reservecar.customer">
-                        <a [routerLink]="['/customer', reservecar.customer?.id, 'view']">{{ reservecar.customer?.id }}</a>
-                    </div>
                 </dd>
             </dl>
 
