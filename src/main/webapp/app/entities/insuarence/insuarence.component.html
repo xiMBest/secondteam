@@ -27,7 +27,7 @@
                     <th scope="col"  jhiSortBy="dateEnd"><span jhiTranslate="rentautoApp.insuarence.dateEnd">Date End</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="cost"><span jhiTranslate="rentautoApp.insuarence.cost">Cost</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="type"><span jhiTranslate="rentautoApp.insuarence.type">Type</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="customer.id"><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" *jhiHasAnyAuthority="'ROLE_ADMIN'" jhiSortBy="customer.id"><span jhiTranslate="rentautoApp.insuarence.customer">Customer</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
