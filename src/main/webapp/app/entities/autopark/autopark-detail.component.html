@@ -36,13 +36,25 @@
                 <dd>
                     <span>{{ autopark.statusAvaileble }}</span>
                 </dd>
+                <dt>Total days</dt>
                 <input type="number" id="tdays" name="tdays">
+                <!-- <dd>Total Price</dd> -->
+
             </dl>
-            <input type="submit" value="Submit">
+            <!-- <input type="submit" id="countTotalPrice"> -->
+            <!-- <button type="submit"
+                    (click)="countTotalPrice()"
+                    class="btn btn-info">Count Price
+            </button> -->
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
                 <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+            <button type="submit"
+            (click)="myFunction()"
+            class="btn btn-info">
+           <span>Count Total Price</span>
             </button>
 
             <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button"

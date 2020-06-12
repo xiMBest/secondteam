@@ -19,4 +19,10 @@ export class AutoparkDetailComponent implements OnInit {
   previousState(): void {
     window.history.back();
   }
+  // countTotalPrice(): void{
+    
+  // }
+  myFunction(): void {
+    alert("1300$");
+  }
 }
